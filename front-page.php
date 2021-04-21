@@ -51,7 +51,7 @@ get_header();
         <script>
 
 
-        const (popular)
+        let popular
 
         const url ="http://lembkesites.dk/kea/09_CMS/loud/wp-json/wp/v2/podcast?per_page=100";
         async function getJson(){
