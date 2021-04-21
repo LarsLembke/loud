@@ -16,11 +16,11 @@ get_header();
         <main id="main" class="site-main">
 
         <section id="firstsection">
-        <div id="beskrivelsesboks">
-            <div id="frontbeskrivelse"></div>
+        <div id="beskrivelse_boks_front">
+            <div id="front_beskrivelse"></div>
         </div>
-        <div id="img_container">
-            <div id="splash_image"></div>
+        <div id="img_container_front">
+            <div id="splash_image_front"></div>
         </div>
         </section>
 
@@ -36,11 +36,11 @@ get_header();
         </section>
 
         <section id="thirdsection">
-            <div id="img_container">
-                <div id="omos_image"></div>
+            <div id="img_container_omos_front">
+                <div id="omos_image_front"></div>
             </div>
-            <div id="omos_txtbox">
-                <div id="omos_txt"></div>
+            <div id="omos_boks_front">
+                <div id="omos_text_front"></div>
             </div>
         </section>
 
