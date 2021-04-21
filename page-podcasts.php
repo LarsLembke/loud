@@ -66,9 +66,10 @@ get_header();
                 const respons = await fetch(url);
                 podcasts = await respons.json();
                 console.log(podcasts);
+                visPodcasts();
             }
 
-            visPodcasts() {
+            function visPodcasts() {
                 console.log("visPodcasts");
 
                 const dest = document.querySelector("#grid_container_podcast");
@@ -86,7 +87,7 @@ get_header();
 
                     dest.appendChild(klon);
                     //klon.querySelector("").
-                })
+                });
 
 
             }
