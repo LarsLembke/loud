@@ -47,6 +47,33 @@ get_header();
 
         </main>
         <!-- #main -->
+
+        <script>
+
+
+        const (popular)
+
+        const url ="http://lembkesites.dk/kea/09_CMS/loud/wp-json/wp/v2/podcast?per_page=100";
+        async function getJson(){
+            let response = await fetch(url);
+            podcasts = await respsonse.json();
+            visPopular();
+        }
+            function visPopular(){
+                console.log(popular);
+            }
+
+        /* async function hentData() {
+            const JSONData = await fetch("https://babushka-dd8a.restdb.io/rest/menu", {
+                headers: myHeaders
+            });
+            mad = await JSONData.json();
+            console.log("Mad", mad);
+            visMad();
+        }
+        */
+
+        </script>
     </div>
     <!-- #primary -->
 
