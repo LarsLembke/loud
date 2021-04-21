@@ -1,12 +1,11 @@
 /*
 Theme Name:    Loud
 Template:    twentynineteen
-Version:      1.0.0
 Description:  Twenty Nineteen Child Theme for Loud
 Author:      Gruppe 6
 */
 
-@media screen(min-width: 600px) {
+@media screen and (min-width: 600px) {
     #grid_container_podcast {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));

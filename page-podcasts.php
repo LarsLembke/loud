@@ -84,6 +84,7 @@ get_header();
                     klon.querySelector(".host").textContent = pods.host;
                     klon.querySelector(".beskrivelse").textContent = pods.description;
                     klon.querySelector(".tid").textContent = pods.time;
+                    klon.querySelector(".podcover").src = pods.image.guid;
 
                     dest.appendChild(klon);
                     //klon.querySelector("").
