@@ -12,16 +12,18 @@
 get_header();
 ?>
 
-    <div id="primary" class="content-area">
-        <main id="main" class="site-main">
+<div id="primary" class="content-area">
+    <main id="main" class="site-main">
+
+
 
         <section id="firstsection">
-        <div id="beskrivelse_boks_front">
-            <div id="front_beskrivelse"></div>
-        </div>
-        <div id="img_container_front">
-            <div id="splash_image_front"></div>
-        </div>
+            <div id="beskrivelse_boks_front">
+                <div id="front_beskrivelse"></div>
+            </div>
+            <div id="img_container_front">
+                <div id="splash_image_front"></div>
+            </div>
         </section>
 
         <section id="secondsection">
@@ -45,24 +47,33 @@ get_header();
         </section>
 
 
-        </main>
-        <!-- #main -->
+    </main>
+    <!-- #main -->
 
-        <script>
+    <template>
+        <article>
+            <img src="" alt="" class="podcover">
+            <h3 class="navn"></h3>
+            <p class="host"></p>
+            <p class="beskrivelse"></p>
+            <p class="tid"></p>
+        </article>
+    </template>
 
-
+    <script>
         let popular;
 
-        const url ="http://lembkesites.dk/kea/09_CMS/loud/wp-json/wp/v2/podcast?per_page=100";
+        const url = "http://lembkesites.dk/kea/09_CMS/loud/wp-json/wp/v2/podcast?per_page=100";
         getJson();
-        async function getJson(){
+        async function getJson() {
             let response = await fetch(url);
             popular = await respsonse.json();
             visPopular();
         }
-            function visPopular(){
-                console.log(popular);
-            }
+
+        function visPopular() {
+            console.log(popular);
+        }
 
         /* async function hentData() {
             const JSONData = await fetch("https://babushka-dd8a.restdb.io/rest/menu", {
@@ -74,10 +85,9 @@ get_header();
         }
         */
 
-        </script>
-    </div>
-    <!-- #primary -->
+    </script>
+</div>
+<!-- #primary -->
 
-    <?php
+<?php
 get_footer();
-
