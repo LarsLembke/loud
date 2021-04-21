@@ -68,6 +68,29 @@ get_header();
                 console.log(podcasts);
             }
 
+            visPodcasts() {
+                console.log("visPodcasts");
+
+                const dest = document.querySelector("#grid_container_podcast");
+                const temp = document.querySelector("template").content;
+
+                podcasts.forEach(pods => {
+                    console.log("forEachPodcasts");
+
+                    const klon = temp.cloneNode(true);
+
+                    klon.querySelector(".navn").textContent = pods.title.rendered;
+                    klon.querySelector(".host").textContent = pods.host;
+                    klon.querySelector(".beskrivelse").textContent = pods.description;
+                    klon.querySelector(".tid").textContent = pods.time;
+
+                    dest.appendChild(klon);
+                    //klon.querySelector("").
+                })
+
+
+            }
+
         </script>
 
 
