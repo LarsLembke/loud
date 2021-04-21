@@ -51,12 +51,13 @@ get_header();
         <script>
 
 
-        let popular
+        let popular;
 
         const url ="http://lembkesites.dk/kea/09_CMS/loud/wp-json/wp/v2/podcast?per_page=100";
+        getJson();
         async function getJson(){
             let response = await fetch(url);
-            podcasts = await respsonse.json();
+            popular = await respsonse.json();
             visPopular();
         }
             function visPopular(){
