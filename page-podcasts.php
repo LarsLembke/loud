@@ -15,24 +15,64 @@ get_header();
     <div id="primary" class="content-area">
         <main id="main" class="site-main">
 
-        <div id="splash_podcast">
-            <div id="beskrivelse_boks_podcast">
-                <div id="podcast_beskrivelse"></div>
+            <div id="splash_podcast">
+                <div id="beskrivelse_boks_podcast">
+                    <div id="podcast_beskrivelse"></div>
+                </div>
+                <div id="img_container_podcast">
+                    <div id="splash_image_podcast"></div>
+                </div>
             </div>
-            <div id="img_container_podcast">
-                <div id="splash_image_podcast"></div>
-            </div>
-        </div>
-        <section id="podcast_grid">
-            <nav id="filtrering"></nav>
-            <div id="grid_container_podcast"></div>
-        </section>
+            <section id="podcast_grid">
+                <nav id="filtrering"></nav>
+                <div id="grid_container_podcast"></div>
+            </section>
 
 
 
 
         </main>
         <!-- #main -->
+
+        <template>
+            <article>
+                <img src="" alt="" class="podcover">
+                <h3 class="navn"></h3>
+                <p class="host"></p>
+                <p class="beskrivelse"></p>
+                <p class="tid"></p>
+            </article>
+        </template>
+
+
+        <script>
+            let podcasts;
+            //let categories;
+            //let filter = alle;
+
+            console.log("podcasts");
+
+            const url = "http://lembkesites.dk/kea/09_CMS/loud/wp-json/wp/v2/podcast?per_page=100";
+
+            document.addEventListener("DOMContentLoaded", start);
+
+            function start() {
+                console.log("start");
+
+                hentData();
+            }
+
+            async function hentData() {
+                const respons = await fetch(url);
+                podcasts = await respons.json();
+                console.log(podcasts);
+            }
+
+        </script>
+
+
+
+
     </div>
     <!-- #primary -->
 
