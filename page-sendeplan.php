@@ -14,7 +14,15 @@ get_header();
 
     <div id="primary" class="content-area">
         <main id="main" class="site-main">
-            <nav id="filtrering"></nav>
+            <nav id="filtrering">
+                <button data-program="Mandag">Mandag</button>
+                <button data-program="Tirdag">Tirdag</button>
+                <button data-program="Onsdag">Onsdag</button>
+                <button data-program="Torsdag">Torsdag</button>
+                <button data-program="Fredag">Fredag</button>
+                <button data-program="Lørdag">Lørdag</button>
+                <button data-program="Søndag">Søndag</button>
+            </nav>
 
             <section id="programliste"></section>
 
@@ -52,7 +60,8 @@ get_header();
                 programmer = await respons.json();
                 console.log(programmer);
                 visProgrammer();
-                opretKnapper();
+                //opretKnapper();
+                addEventListenerToButton();
             }
 
             function opretKnapper() {
