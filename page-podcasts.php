@@ -50,7 +50,7 @@ get_header();
         <script>
             let podcasts;
             let categories;
-            let filter = alle;
+            let filter = "alle";
 
             console.log("podcasts");
 
