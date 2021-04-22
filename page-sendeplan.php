@@ -33,7 +33,7 @@ get_header();
         <script>
             let programmer;
             let dag;
-            let filter;
+            let filter = "Mandag";
 
             console.log("lars");
 
@@ -52,6 +52,33 @@ get_header();
                 programmer = await respons.json();
                 console.log(programmer);
                 visProgrammer();
+                opretKnapper();
+            }
+
+            function opretKnapper() {
+                programmer.forEach(pro => {
+                    document.querySelector("#filtrering").innerHTML += `<button class="filter" data-program="${pro.dag}">${pro.dag}</button>`
+                })
+                addEventListenerToButton();
+            }
+
+
+            function addEventListenerToButton() {
+                console.log("button");
+                document.querySelectorAll("#filtrering button").forEach(knap => {
+                    knap.addEventListener("click", filtrerProgrammer);
+                })
+            }
+
+            function filtrerProgrammer() {
+                filter = this.dataset.program;
+                console.log("filtrerRetter")
+                    //document.querySelector(".valgt").classList.remove("valgt");
+                    //this.classList.add("valgt");
+
+
+                visProgrammer();
+                //header.textContent = this.textContent;
             }
 
 
@@ -64,11 +91,14 @@ get_header();
                 programmer.forEach(prog => {
                     console.log("progForEach");
 
-                    const klon = temp.cloneNode(true);
-                    klon.querySelector(".klokken").textContent = prog.klokken;
-                    klon.querySelector(".program").textContent = prog.title.rendered;
+                    if (filter == "Mandag" || prog.dag.includes(filter)) {
 
-                    dest.appendChild(klon);
+                        const klon = temp.cloneNode(true);
+                        klon.querySelector(".klokken").textContent = prog.klokken;
+                        klon.querySelector(".program").textContent = prog.title.rendered;
+
+                        dest.appendChild(klon);
+                    }
                 });
 
 
