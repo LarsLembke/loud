@@ -64,12 +64,12 @@ get_header();
                 addEventListenerToButton();
             }
 
-            function opretKnapper() {
+            /*function opretKnapper() {
                 programmer.forEach(pro => {
                     document.querySelector("#filtrering").innerHTML += `<button class="filter" data-program="${pro.dag}">${pro.dag}</button>`
                 })
                 addEventListenerToButton();
-            }
+            }*/
 
 
             function addEventListenerToButton() {
@@ -96,6 +96,8 @@ get_header();
 
                 const dest = document.querySelector("#programliste");
                 const temp = document.querySelector("template").content;
+
+                dest.textContent = "";
 
                 programmer.forEach(prog => {
                     console.log("progForEach");
