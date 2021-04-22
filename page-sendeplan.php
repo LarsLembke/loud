@@ -16,7 +16,7 @@ get_header();
         <main id="main" class="site-main">
             <nav id="filtrering">
                 <button data-program="Mandag">Mandag</button>
-                <button data-program="Tirdag">Tirdag</button>
+                <button data-program="Tirsdag">Tirsdag</button>
                 <button data-program="Onsdag">Onsdag</button>
                 <button data-program="Torsdag">Torsdag</button>
                 <button data-program="Fredag">Fredag</button>
