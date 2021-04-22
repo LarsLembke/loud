@@ -110,16 +110,20 @@ get_header();
                 podcasts.forEach(pods => {
                     console.log("forEachPodcasts");
 
-                    const klon = temp.cloneNode(true);
 
-                    klon.querySelector(".navn").textContent = pods.title.rendered;
-                    klon.querySelector(".host").textContent = pods.host;
-                    klon.querySelector(".beskrivelse").textContent = pods.description;
-                    klon.querySelector(".tid").textContent = pods.time;
-                    klon.querySelector(".podcover").src = pods.image.guid;
+                    if (filter == "alle" || retterne.categories.includes(parseInt(filter))) {
 
-                    dest.appendChild(klon);
-                    //klon.querySelector("").
+                        const klon = temp.cloneNode(true);
+
+                        klon.querySelector(".navn").textContent = pods.title.rendered;
+                        klon.querySelector(".host").textContent = pods.host;
+                        klon.querySelector(".beskrivelse").textContent = pods.description;
+                        klon.querySelector(".tid").textContent = pods.time;
+                        klon.querySelector(".podcover").src = pods.image.guid;
+
+                        dest.appendChild(klon);
+                        //klon.querySelector("").
+                    }
                 });
 
 
