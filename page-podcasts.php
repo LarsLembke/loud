@@ -37,7 +37,7 @@ get_header();
         <!-- #main -->
 
         <template>
-            <article>
+            <article class="podcast_container">
                 <img src="" alt="" class="podcover">
                 <h3 class="navn"></h3>
                 <p class="host"></p>
@@ -124,6 +124,8 @@ get_header();
                         klon.querySelector(".beskrivelse").textContent = pods.description;
                         klon.querySelector(".tid").textContent = pods.time;
                         klon.querySelector(".podcover").src = pods.image.guid;
+
+                        klon.querySelector(".podcast_container").addEventListener("click", () => location.href = pods.link);
 
                         dest.appendChild(klon);
                         //klon.querySelector("").
