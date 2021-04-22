@@ -105,7 +105,7 @@ get_header();
                     if (filter == "Mandag" || prog.dag.includes(filter)) {
 
                         const klon = temp.cloneNode(true);
-                        klon.querySelector(".klokken").textContent = prog.klokken;
+                        klon.querySelector(".klokken").textContent = prog.klokken.format('HH:MM');
                         klon.querySelector(".program").textContent = prog.title.rendered;
 
                         dest.appendChild(klon);
