@@ -79,7 +79,7 @@ get_header();
                 console.log("opretKnapper")
 
                 categories.forEach(cat => {
-                    document.querySelector("#filtrering").innerHTML += `<button class="filter" data-podcast="${cat.name}">${cat.name}</button>`
+                    document.querySelector("#filtrering").innerHTML += `<button class="filter" data-podcast="${cat.id}">${cat.name}</button>`
                 })
                 addEventListenerToButton();
             }
