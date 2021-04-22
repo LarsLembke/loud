@@ -51,6 +51,27 @@ get_header();
                 const respons = await fetch(url);
                 programmer = await respons.json();
                 console.log(programmer);
+                visProgrammer();
+            }
+
+
+            function visProgrammer() {
+                console.log("visProgrammer");
+
+                const dest = document.querySelector("#programliste");
+                const temp = document.querySelector("template").content;
+
+                programmer.forEach(prog => {
+                    console.log("progForEach");
+
+                    const klon = temp.cloneNode(true);
+                    klon.querySelector(".klokken").textContent = prog.klokken;
+                    klon.querySelector(".program").textContent = prog.title.rendered;
+
+                    dest.appendChild(klon);
+                });
+
+
             }
 
         </script>
