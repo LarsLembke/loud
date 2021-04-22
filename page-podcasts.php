@@ -24,7 +24,9 @@ get_header();
                 </div>
             </div>
             <section id="podcast_grid">
-                <nav id="filtrering"></nav>
+                <nav id="filtrering">
+                    <button data-podcast="alle">Alle</button>
+                </nav>
                 <div id="grid_container_podcast"></div>
             </section>
 
@@ -47,12 +49,13 @@ get_header();
 
         <script>
             let podcasts;
-            //let categories;
-            //let filter = alle;
+            let categories;
+            let filter = alle;
 
             console.log("podcasts");
 
             const url = "http://lembkesites.dk/kea/09_CMS/loud/wp-json/wp/v2/podcast?per_page=100";
+            const caturl = "http://lembkesites.dk/kea/09_CMS/loud/wp-json/wp/v2/categories/";
 
             document.addEventListener("DOMContentLoaded", start);
 
@@ -64,10 +67,39 @@ get_header();
 
             async function hentData() {
                 const respons = await fetch(url);
+                const catrespons = await fetch(caturl);
                 podcasts = await respons.json();
+                categories = await catrespons.json();
                 console.log(podcasts);
                 visPodcasts();
+                opretKnapper();
             }
+
+            function opretKnapper() {
+                console.log("opretKnapper")
+
+                categories.forEach(cat => {
+                    document.querySelector("#filtrering").innerHTML += `<button class="filter" data-podcast="${cat.name}">${cat.name}</button>`
+                })
+                addEventListenerToButton();
+            }
+
+            function addEventListenerToButton() {
+                console.log("button");
+                document.querySelectorAll("#filtrering button").forEach(knap => {
+                    knap.addEventListener("click", filtrerPodcasts);
+                })
+            }
+
+            function filtrerPodcasts() {
+                filter = this.dataset.podcast;
+                console.log("filtrerPodcasts")
+
+                visPodcasts();
+            }
+
+
+
 
             function visPodcasts() {
                 console.log("visPodcasts");
