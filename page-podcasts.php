@@ -113,6 +113,8 @@ get_header();
 
                     if (filter == "alle" || retterne.categories.includes(parseInt(filter))) {
 
+                        console.log("IF");
+
                         const klon = temp.cloneNode(true);
 
                         klon.querySelector(".navn").textContent = pods.title.rendered;
