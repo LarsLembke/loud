@@ -113,7 +113,7 @@ get_header();
                     console.log("forEachPodcasts");
 
 
-                    if (filter == "alle" || retterne.categories.includes(parseInt(filter))) {
+                    if (filter == "alle" || pods.categories.includes(parseInt(filter))) {
 
                         console.log("IF");
 
