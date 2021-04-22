@@ -107,6 +107,8 @@ get_header();
                 const dest = document.querySelector("#grid_container_podcast");
                 const temp = document.querySelector("template").content;
 
+                dest.textContent = "";
+
                 podcasts.forEach(pods => {
                     console.log("forEachPodcasts");
 
