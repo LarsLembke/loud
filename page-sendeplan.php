@@ -41,7 +41,7 @@ get_header();
         <script>
             let programmer;
             let dag;
-            let filter = "Mandag";
+            let filter;
 
             console.log("lars");
 
@@ -99,13 +99,28 @@ get_header();
 
                 dest.textContent = "";
 
+                /*const sortedByTime = programmer.sort((a, b) => {
+                    return a.(parseInt(klokken)) - b.(parseInt(klokken));
+                });*/
+
+                //console.log(sortedByTime)
+
+                programmer.sort((a, b) => (a.klokken < b.klokken) ? -1 : ((a.klokken > b.klokken) ? 1 : 0))
+
+                console.log(programmer)
+
                 programmer.forEach(prog => {
                     console.log("progForEach");
-
-                    if (filter == "Mandag" || prog.dag.includes(filter)) {
+                    //filter == "Mandag" ||
+                    if (prog.dag.includes(filter)) {
 
                         const klon = temp.cloneNode(true);
-                        klon.querySelector(".klokken").textContent = prog.klokken.format('HH:MM');
+
+                        const HHMM = prog.klokken;
+                        const patt = /[0-9][0-9]:[0-9][0-9]/
+                        const result = HHMM.match(patt);
+
+                        klon.querySelector(".klokken").textContent = result;
                         klon.querySelector(".program").textContent = prog.title.rendered;
 
                         dest.appendChild(klon);
