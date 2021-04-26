@@ -16,37 +16,40 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
-		<?php get_template_part( 'template-parts/footer/footer', 'widgets' ); ?>
-		<div class="site-info">
-			<?php $blog_info = get_bloginfo( 'name' ); ?>
-			<?php if ( ! empty( $blog_info ) ) : ?>
-				<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>,
-			<?php endif; ?>
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentynineteen' ) ); ?>" class="imprint">
-				<?php
-				/* translators: %s: WordPress. */
-				printf( __( 'Proudly powered by %s.', 'twentynineteen' ), 'WordPress' );
-				?>
-			</a>
-			<?php
-			if ( function_exists( 'the_privacy_policy_link' ) ) {
-				the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' );
-			}
-			?>
-			<?php if ( has_nav_menu( 'footer' ) ) : ?>
-				<nav class="footer-navigation" aria-label="<?php esc_attr_e( 'Footer Menu', 'twentynineteen' ); ?>">
-					<?php
-					wp_nav_menu(
-						array(
-							'theme_location' => 'footer',
-							'menu_class'     => 'footer-menu',
-							'depth'          => 1,
-						)
-					);
-					?>
-				</nav><!-- .footer-navigation -->
-			<?php endif; ?>
-		</div><!-- .site-info -->
+		<div id="footer_container">
+
+		<div class="col">
+			<img class="logo" src="http://lembkesites.dk/kea/09_CMS/loud/wp-content/uploads/2021/04/radio-loud_2f112a81.png" alt="Radio LOUD logo">
+
+		</div>
+		<div class="col">
+			<ul>
+				<li><h4>Indhold
+			</h4></li>
+				<li><a href="#">Podcast</a></li>
+				<li><a href="#">Sendeplan</a></li>
+			</ul>
+
+		</div>
+		<div class="col">
+			<ul>
+				<li><h4>Om LOUD
+			</h4></li>
+				<li><a href="#">LOUD LAB</a></li>
+				<li><a href="#">Job</a></li>
+				<li><a href="#">Praktikant på LOUD</a></li>
+				<li><a href="#">Presse</a></li>
+			</ul>
+
+		</div>
+		<div class="col">
+			<h4>
+				Kontakt
+			</h4>
+
+		</div>
+		</div>
+
 	</footer><!-- #colophon -->
 
 </div><!-- #page -->

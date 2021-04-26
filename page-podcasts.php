@@ -29,6 +29,11 @@ echo do_shortcode('[smartslider3 slider="4"]');
                 </div>
                 <section id="podcast_grid">
                     <nav id="filtrering">
+						<div class="kat">
+							<h4>
+								Kategorier
+							</h4>
+						</div>
                         <button data-podcast="alle">Alle</button>
                     </nav>
                     <div id="grid_container_podcast"></div>

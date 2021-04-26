@@ -46,27 +46,32 @@ get_header();
                 </div>
             </section>
 
-            <img class="billede" src="" alt="">
-            <article>
-                <div>
-                    <p class="dato"></p>
-                    <p class="description"></p>
-                </div>
-            </article>
-
+			<section id="section_two">
+				<h2>
+					Hør flere episoder
+				</h2>
+			<section id="episoder_grid">
+<div id="pod_beskrivelse_ep">
+					<img class="billede" src="" alt="">
+				</div>
             <section id="episode">
+
                 <template>
                     <article>
-                        <img src="" alt="">
                         <div>
-                            <h2 class="episodenavn"></h2>
-                            <p class="dato"></p>
+							<p class="dato"></p>
+                            <h3 class="episodenavn"></h3>
+
                             <p class="kortbeskrivelse"></p>
-                            <a href=""></a>
+                            <a href="">
+								<img src="http://lembkesites.dk/kea/09_CMS/loud/wp-content/uploads/2021/04/pil.svg"></a>
+
                         </div>
                     </article>
                 </template>
             </section>
+				</section>
+				</section>
 
 
 
@@ -113,7 +118,8 @@ get_header();
                 console.log(podcast.title.rendered);
                 document.querySelector(".podcastnavn").innerHTML = podcast.title.rendered;
                 document.querySelector(".host").textContent = "...med " + podcast.host;
-                document.querySelector(".billede").src = podcast.image.guid;
+                document.querySelector("#img_container_single .billede").src = podcast.image.guid;
+				document.querySelector("#pod_beskrivelse_ep .billede").src = podcast.image.guid;
                 document.querySelector(".description").innerHTML = podcast.description;
             }
 

@@ -10,7 +10,8 @@ Version: 1.1.1
     #grid_container_podcast {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        grid-gap: 5px;
-        margin: 0px 3vw;
+        grid-gap: 10px;
+        margin: 0px 2rem;
+		margin-bottom: 3rem;
     }
 }
