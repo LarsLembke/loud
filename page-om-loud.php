@@ -36,20 +36,33 @@ get_header();
                 </div>
             </section>
             <section id="second_section_omos">
-                <article id="txt_omos_beskrivelse"></article>
-                <div id="img_omos_secondcontainer"></div>
+                <article id="txt_omos_beskrivelse">
+                    <h2>Hvem er LOUD</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti accusamus corporis unde alias cupiditate quod asperiores iure ducimus sed soluta dolorem, dolores molestias dicta ad voluptatem quam perferendis. Hic, non.</p>
+                    <h3>Hvad er vores mission</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea quos quae voluptatem sint adipisci repellat natus tenetur, voluptate, eum, fuga consectetur perspiciatis enim incidunt quis amet dolorem aut voluptates vel.</p>
+                </article>
+                <div id="img_omos_secondcontainer">
+                    <img src="img/brooke-cagle--uHVRvDr7pg-unsplash.jpeg" alt="">
+                </div>
             </section>
             <section id="third_section_omos">
                 <div id="omos_gridcontainer">
-                    <img src="" alt="" class="img_omos_grid">
-                    <img src="" alt="" class="img_omos_grid">
-                    <img src="" alt="" class="img_omos_grid">
-                    <img src="" alt="" class="img_omos_grid">
+                    <img src="img/baresex.jpeg" alt="" class="img_omos_grid">
+                    <img src="img/forevigt.jpeg" alt="" class="img_omos_grid">
+                    <img src="img/rocker.jpeg" alt="" class="img_omos_grid">
+                    <img src="img/ofrene.jpeg" alt="" class="img_omos_grid">
                 </div>
-                <div id="txt_omos_thirdcontainer"></div>
+                <div id="txt_omos_thirdcontainer">
+                    <h2>Hvad kan vi tilbyde</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore possimus voluptatum recusandae ex illum praesentium, quibusdam dolor perferendis vel reprehenderit! Quo illum vel reiciendis facere a laudantium exercitationem quia est.</p>
+                </div>
             </section>
             <section id="fourth_section_omos">
-                <div id="txt_omos_fourthcontainer"></div>
+                <div id="txt_omos_fourthcontainer">
+                    <h2>Hvor kan du høre vores podcasts</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut harum ad, mollitia tempora consectetur voluptate molestiae. Ratione ipsam quibusdam, aspernatur sint quo animi consectetur ab explicabo. Laboriosam sapiente commodi, voluptas.</p>
+                </div>
                 <div id="link_gridcontainer">
                     <a href="" class="link_omos_grid"></a>
                     <a href="" class="link_omos_grid"></a>
