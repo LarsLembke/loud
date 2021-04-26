@@ -16,7 +16,36 @@ get_header();
     <div id="primary" class="content-area">
         <main id="main" class="site-main">
 
-            <h3 class="podcastnavn"></h3>
+            <section id="firstsection_single">
+                <div id="content_single">
+
+
+                    <div id="beskrivelse_boks_single">
+                        <h3 class="podcastnavn"></h3>
+                        <p class="host">
+
+                        </p>
+
+
+                        <div id="front_beskrivelse">
+                            <p class="description"></p>
+                        </div>
+                    </div>
+                    <div id="afspil">
+                        <button>
+                            Afspil seneste
+                        </button>
+                        <div class="afspiller">
+
+                        </div>
+                    </div>
+                </div>
+                <div id="img_container_single">
+                    <div id="splash_image_front">
+                        <img class="billede" src="" alt=""></div>
+                </div>
+            </section>
+
             <img class="billede" src="" alt="">
             <article>
                 <div>
@@ -83,9 +112,13 @@ get_header();
                 console.log("visPodcast");
                 console.log(podcast.title.rendered);
                 document.querySelector(".podcastnavn").innerHTML = podcast.title.rendered;
+                document.querySelector(".host").textContent = "...med " + podcast.host;
                 document.querySelector(".billede").src = podcast.image.guid;
                 document.querySelector(".description").innerHTML = podcast.description;
             }
+
+
+
 
             function visEpisoder() {
                 console.log("visEpisoder");
@@ -96,7 +129,7 @@ get_header();
                     if (episode.forhold == aktuelpodcast) {
                         console.log("loop kører id :", aktuelpodcast);
                         let klon = temp.cloneNode(true).content;
-                        klon.querySelector(".episodenavn").textContent = episode.title.rendered;
+                        klon.querySelector(".episodenavn").innerHTML = episode.title.rendered;
                         klon.querySelector(".dato").innerHTML = episode.dato;
                         klon.querySelector(".kortbeskrivelse").innerHTML = episode.kortbeskrivelse;
                         klon.querySelector("article").addEventListener("click", () => {
@@ -109,6 +142,14 @@ get_header();
                         container.appendChild(klon);
                     }
                 })
+                visDato();
+            }
+
+
+            function visDato() {
+                let d = new Date(episoder.dato);
+
+                console.log(d.getYear);
             }
 
         </script>
