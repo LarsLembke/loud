@@ -44,6 +44,7 @@ get_header();
                     <div id="splash_image_front">
                         <img class="billede" src="" alt=""></div>
                 </div>
+				<a href="#section_two" class="pil"><img src="http://lembkesites.dk/kea/09_CMS/loud/wp-content/uploads/2021/04/pil-gul.png"></a>
             </section>
 
 			<section id="section_two">

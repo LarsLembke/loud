@@ -17,9 +17,9 @@ get_header();
 
             <section id="firstsection">
                 <div id="beskrivelse_boks_front">
-					<h2>
+					<h3>
 						Dine favorit
-					</h2>
+					</h3>
 					<h1 class="glitch"> podcasts </h1>
 
 					<div class="front-icons">
@@ -33,6 +33,7 @@ get_header();
                     <div id="splash_image_front"></div>
                 </div>
             </section>
+			<section class="section_two">
 
 			<h2 class="populaerepodcasts">
 				Populære podcasts
@@ -40,30 +41,36 @@ get_header();
 
 			<?php echo do_shortcode('[metaslider id="910"]'); ?>
 
+				</section>
+			<section class="section_three">
+
 			<h2 class="nytfraloud">
 				Nyt fra LOUD
 			</h2>
 			<?php echo do_shortcode('[metaslider id="938"]'); ?>
 
-            <section id="secondsection">
-                <div id="poppodcasts">
-                    <div id="pop1"></div>
-                    <div id="pop2"></div>
-                    <div id="pop3"></div>
-                    <div id="pop4"></div>
-                    <div id="pop5"></div>
-                    <div id="pop6"></div>
-                </div>
-            </section>
+			</section>
 
-            <section id="thirdsection">
-                <div id="img_container_omos_front">
-                    <div id="omos_image_front"></div>
-                </div>
-                <div id="omos_boks_front">
-                    <div id="omos_text_front"></div>
-                </div>
-            </section>
+
+
+			<section id="section_four">
+				<div id="container">
+			<div class="col img">
+				<img src="http://lembkesites.dk/kea/09_CMS/loud/wp-content/uploads/2021/04/loud-group-e1619452857484.jpg" alt="loud værter">
+				</div>
+				<div class="col red">
+					<h2>
+						Hvem er LOUD?
+					</h2>
+					<p>
+
+					</p>
+					<a href=""></a>
+
+				</div>
+				</div>
+
+			</section>
 
 
         </main>

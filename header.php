@@ -32,6 +32,11 @@
 
 			<div class="site-branding-container">
 				<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
+				<div id="some">
+							<a href="#"><img class="fb" src="http://lembkesites.dk/kea/09_CMS/loud/wp-content/uploads/2021/04/facebook.png" width="30px"></a>
+							<a href="#"><img class="insta" src="http://lembkesites.dk/kea/09_CMS/loud/wp-content/uploads/2021/04/instagram.png" width="30px"></a>
+							<a href="#"><img class="youtube" src="http://lembkesites.dk/kea/09_CMS/loud/wp-content/uploads/2021/04/youtube.png" width="30px"></a>
+						</div>
 			</div><!-- .site-branding-container -->
 
 			<?php if ( is_singular() && twentynineteen_can_show_post_thumbnail() ) : ?>
@@ -49,6 +54,8 @@
 					<div class="<?php echo $classes; ?>">
 						<?php get_template_part( 'template-parts/header/entry', 'header' ); ?>
 						<?php get_template_part( 'template-parts/header/header', 'widgets' ); ?>
+
+
 					</div><!-- .entry-header -->
 					<?php rewind_posts(); ?>
 				</div>
