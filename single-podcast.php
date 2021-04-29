@@ -42,37 +42,38 @@ get_header();
                 </div>
                 <div id="img_container_single">
                     <div id="splash_image_front">
-                        <img class="billede" src="" alt=""></div>
+                        <img class="billede" src="" alt="">
+                    </div>
                 </div>
-				<a href="#section_two" class="pil"><img src="http://lembkesites.dk/kea/09_CMS/loud/wp-content/uploads/2021/04/pil-gul.png"></a>
+                <a href="#section_two" class="pil"><img src="http://lembkesites.dk/kea/09_CMS/loud/wp-content/uploads/2021/04/pil-gul.png"></a>
             </section>
 
-			<section id="section_two">
-				<h2>
-					Hør flere episoder
-				</h2>
-			<section id="episoder_grid">
-<div id="pod_beskrivelse_ep">
-					<img class="billede" src="" alt="">
-				</div>
-            <section id="episode">
+            <section id="section_two">
+                <h2>
+                Hør flere episoder
+            </h2>
+                <section id="episoder_grid">
+                    <div id="pod_beskrivelse_ep">
+                        <img class="billede" src="" alt="">
+                    </div>
+                    <section id="episode">
 
-                <template>
-                    <article>
-                        <div>
-							<p class="dato"></p>
-                            <h3 class="episodenavn"></h3>
+                        <template>
+                            <article>
+                                <div>
+                                    <p class="dato"></p>
+                                    <h3 class="episodenavn"></h3>
 
-                            <p class="kortbeskrivelse"></p>
-                            <a href="">
-								<img src="http://lembkesites.dk/kea/09_CMS/loud/wp-content/uploads/2021/04/pil.svg"></a>
+                                    <p class="kortbeskrivelse"></p>
+                                    <a href="">
+                                        <img src="http://lembkesites.dk/kea/09_CMS/loud/wp-content/uploads/2021/04/pil.svg"></a>
 
-                        </div>
-                    </article>
-                </template>
+                                </div>
+                            </article>
+                        </template>
+                    </section>
+                </section>
             </section>
-				</section>
-				</section>
 
 
 
@@ -84,8 +85,12 @@ get_header();
             let podcast;
             let episoder;
             let aktuelpodcast = <?php echo get_the_ID() ?>;
+            let episodeInfo;
+
 
             const dbUrl = "http://lembkesites.dk/kea/09_CMS/loud/wp-json/wp/v2/podcast/" + aktuelpodcast;
+
+
             const episodeUrl = "http://lembkesites.dk/kea/09_CMS/loud/wp-json/wp/v2/episode?per_page=100";
 
             const container = document.querySelector("#episode");
@@ -111,7 +116,8 @@ get_header();
                 console.log("episode: ", episoder);
 
                 visPodcast();
-                visEpisoder();
+                getEpisoder();
+                //visEpisoder();
             }
 
             function visPodcast() {
@@ -120,8 +126,26 @@ get_header();
                 document.querySelector(".podcastnavn").innerHTML = podcast.title.rendered;
                 document.querySelector(".host").textContent = "...med " + podcast.host;
                 document.querySelector("#img_container_single .billede").src = podcast.image.guid;
-				document.querySelector("#pod_beskrivelse_ep .billede").src = podcast.image.guid;
+                document.querySelector("#pod_beskrivelse_ep .billede").src = podcast.image.guid;
                 document.querySelector(".description").innerHTML = podcast.description;
+            }
+
+            async function getEpisoder() {
+                let episodeForhold = "http://lembkesites.dk/kea/09_CMS/loud/wp-json/wp/v2/episode/";
+
+
+                podcast.episoder.forEach(async episoderne => {
+                    let data3 = "data" + episoderne;
+                    data3 = await fetch(episodeForhold + episoderne);
+                    episodeInfo = await data3.json();
+
+                    console.log(episodeInfo);
+                    visEpisoder();
+
+
+                })
+
+
             }
 
 
@@ -130,32 +154,29 @@ get_header();
             function visEpisoder() {
                 console.log("visEpisoder");
                 let temp = document.querySelector("template");
-                episoder.forEach(episode => {
-                    console.log("loop id :", aktuelpodcast);
-                    console.log(episode.forhold);
-                    if (episode.forhold == aktuelpodcast) {
-                        console.log("loop kører id :", aktuelpodcast);
-                        let klon = temp.cloneNode(true).content;
-                        klon.querySelector(".episodenavn").innerHTML = episode.title.rendered;
-                        klon.querySelector(".dato").innerHTML = episode.dato;
-                        klon.querySelector(".kortbeskrivelse").innerHTML = episode.kortbeskrivelse;
-                        klon.querySelector("article").addEventListener("click", () => {
-                            location.href = episode.link;
+                let klon = temp.cloneNode(true).content;
 
-                        })
+                console.log("loop id :", aktuelpodcast);
 
-                        klon.querySelector("a").href = episode.link;
-                        console.log("episode", episode.link);
-                        container.appendChild(klon);
-                    }
-                })
+                klon.querySelector(".episodenavn").innerHTML = episodeInfo.title.rendered;
+                klon.querySelector(".dato").innerHTML = episodeInfo.dato;
+                klon.querySelector(".kortbeskrivelse").innerHTML = episodeInfo.kortbeskrivelse;
+                klon.querySelector("article").addEventListener("click", () => {
+                    location.href = episodeInfo.link;
+                });
+                klon.querySelector("a").href = episodeInfo.link;
+                console.log("episode", episodeInfo.link);
+                container.appendChild(klon);
+
+
+
+
+                //if (episode.forhold == aktuelpodcast) {}
                 visDato();
             }
 
-
             function visDato() {
                 let d = new Date(episoder.dato);
-
                 console.log(d.getYear);
             }
 
