@@ -63,8 +63,8 @@ echo do_shortcode('[smartslider3 slider="4"]');
 
                 console.log("podcasts");
 
-                const url = "http://lembkesites.dk/kea/09_CMS/loud/wp-json/wp/v2/podcast?per_page=100";
-                const caturl = "http://lembkesites.dk/kea/09_CMS/loud/wp-json/wp/v2/categories/";
+                const url = "https://lembkesites.dk/kea/09_CMS/loud/wp-json/wp/v2/podcast?per_page=100";
+                const caturl = "https://lembkesites.dk/kea/09_CMS/loud/wp-json/wp/v2/categories/";
 
                 document.addEventListener("DOMContentLoaded", start);
 

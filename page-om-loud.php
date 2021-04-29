@@ -26,8 +26,8 @@ get_header();
 					</h3>
                     <div class="front-icons">
 
-                        <a href="#"><img src="http://lembkesites.dk/kea/09_CMS/loud/wp-content/uploads/2021/04/appstore_8e70a99f.svg"></a>
-                        <a href="#"><img src="http://lembkesites.dk/kea/09_CMS/loud/wp-content/uploads/2021/04/google-play-2_a914298c.png"></a>
+                        <a href="#"><img src="https://lembkesites.dk/kea/09_CMS/loud/wp-content/uploads/2021/04/appstore_8e70a99f.svg"></a>
+                        <a href="#"><img src="https://lembkesites.dk/kea/09_CMS/loud/wp-content/uploads/2021/04/google-play-2_a914298c.png"></a>
                     </div>
                     <div id="front_beskrivelse"></div>
                 </div>
@@ -41,7 +41,7 @@ get_header();
 
 
                 <article id="txt_omos_beskrivelse">
-                    <h2>Hvem er Radio LOUD</h2>
+                    <h3>Hvem er Radio LOUD</h3>
                     <p>Radio Loud er en dansk digital public service-radiokanal beliggende i Svendborg og København drevet af en sammenslutning af lokalradioer og Berlingske Media gennem selskabet Kulturradio Danmark A/S.</p>
                     <h3>Hvad er vores mission</h3>
                     <p>Vores mission er at skabe spændende og relevant indhold til de unge danskerne, både via live radio men også i stor stil via podcasts.</p>
@@ -60,7 +60,7 @@ get_header();
                 </div>
                 <div id="txt_omos_thirdcontainer">
 					<div id="container">
-                    <h2>Hvad kan vi tilbyde</h2>
+                    <h3>Hvad kan vi tilbyde</h3>
                     <p>På Radio LOUD kan vi tilbyde underholdende live radio med vores altid interessante værter - og vi har hundredevis af podcasts, til en hver lejlighed.</p>
                 </div>
 		</div>
@@ -68,7 +68,7 @@ get_header();
             <section id="fourth_section_omos">
                 <div id="txt_omos_fourthcontainer">
 					<div id="container">
-                    <h2>Hvor kan du høre vores podcasts</h2>
+                    <h3>Hvor kan du høre vores podcasts</h3>
                     <p>Alle vorees podcasts er tilgængelige på stort set alle podcast streamingtjenester. Her i blandt: Apple Podcasts, Spotify, Google Podcasts, Podimo og Spreaker.</p>
                 </div>
 					</div>
