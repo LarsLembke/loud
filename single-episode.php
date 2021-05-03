@@ -17,6 +17,9 @@ get_header();
 
             <section id="firstsection_single">
                 <div id="content_single">
+					<div class="tilbage" href=""><img src="http://lembkesites.dk/kea/09_CMS/loud/wp-content/uploads/2021/04/back-pil-gul.png" alt="tilbage pil" width="26px" height="21px"><p>
+
+						</p></div>
 
 
                     <div id="beskrivelse_boks_single">
@@ -37,7 +40,11 @@ get_header();
                             Afspil episode
                         </button>
                         <div class="afspiller">
+<img class="lyd" src="http://lembkesites.dk/kea/09_CMS/loud/wp-content/uploads/2021/05/afspiller.png" alt="lydafspilning" width="458px" height="103px" >
+							<p class="tid">
+								00:42
 
+							</p>
                         </div>
                     </div>
                 </div>
@@ -96,9 +103,9 @@ get_header();
 
             let podcast;
 
-            const dbUrl = "http://lembkesites.dk/kea/09_CMS/loud/wp-json/wp/v2/episode/" + aktuelEpisode;
-            const episodeUrl = "http://lembkesites.dk/kea/09_CMS/loud/wp-json/wp/v2/episode?per_page=100";
-            //const podcastUrl = "http://lembkesites.dk/kea/09_CMS/loud/wp-json/wp/v2/podcast/";
+            const dbUrl = "https://lembkesites.dk/kea/09_CMS/loud/wp-json/wp/v2/episode/" + aktuelEpisode;
+            const episodeUrl = "https://lembkesites.dk/kea/09_CMS/loud/wp-json/wp/v2/episode?per_page=100";
+            //const podcastUrl = "https://lembkesites.dk/kea/09_CMS/loud/wp-json/wp/v2/podcast/";
 
             const container = document.querySelector("#episode");
 
@@ -133,7 +140,7 @@ get_header();
             }
 
             async function getPodcast() {
-                const podcastUrl = "http://lembkesites.dk/kea/09_CMS/loud/wp-json/wp/v2/podcast/" + singleEpisode.forhold;
+                const podcastUrl = "https://lembkesites.dk/kea/09_CMS/loud/wp-json/wp/v2/podcast/" + singleEpisode.forhold;
 
                 const data3 = await fetch(podcastUrl);
                 podcastForhold = await data3.json();
@@ -144,7 +151,7 @@ get_header();
             }
 
             async function getEpisoder() {
-                let episodeForhold = "http://lembkesites.dk/kea/09_CMS/loud/wp-json/wp/v2/episode/";
+                let episodeForhold = "https://lembkesites.dk/kea/09_CMS/loud/wp-json/wp/v2/episode/";
 
 
                 podcastForhold.episoder.forEach(async episoderne => {
@@ -164,6 +171,8 @@ get_header();
             function visSingleEpisode() {
                 console.log("visSingleEpisode");
                 console.log(singleEpisode.title.rendered);
+
+document.querySelector(".tilbage p").innerHTML = podcastForhold.title.rendered;
                 document.querySelector(".singleepisodenavn").innerHTML = singleEpisode.title.rendered;
                 document.querySelector(".aktuelDato").innerHTML = singleEpisode.dato;
                 document.querySelector(".host").innerHTML = "...med " + podcastForhold.host;
@@ -173,6 +182,7 @@ get_header();
                 document.querySelector("#img_container_single .billede").src = podcastForhold.image.guid;
                 document.querySelector("#pod_beskrivelse_ep .billede").src = podcastForhold.image.guid;
                 document.querySelector(".podcast_beskrivelse_episode").textContent = podcastForhold.description;
+				document.querySelector(".tilbage").addEventListener("click", () => location.href = podcastForhold.link);
 
             }
 
