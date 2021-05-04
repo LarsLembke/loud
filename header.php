@@ -18,7 +18,6 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11" />
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap" rel="stylesheet">
-	<link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet">
 	<?php wp_head(); ?>
 </head>
@@ -30,13 +29,17 @@
 
 		<header id="masthead child-header" class="<?php echo is_singular() && twentynineteen_can_show_post_thumbnail() ? 'site-header featured-image' : 'site-header'; ?>">
 
+
 			<div class="site-branding-container">
 				<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
 				<div id="some">
-							<a href="#"><img class="fb" src="http://lembkesites.dk/kea/09_CMS/loud/wp-content/uploads/2021/04/facebook.png" width="30px"></a>
-							<a href="#"><img class="insta" src="http://lembkesites.dk/kea/09_CMS/loud/wp-content/uploads/2021/04/instagram.png" width="30px"></a>
-							<a href="#"><img class="youtube" src="http://lembkesites.dk/kea/09_CMS/loud/wp-content/uploads/2021/04/youtube.png" width="30px"></a>
+							<a href="#"><img class="fb" src="http://lembkesites.dk/kea/09_CMS/loud/wp-content/uploads/2021/04/facebook.png" alt="facebook link" width="30px" height="30px"></a>
+							<a href="#"><img class="insta" src="http://lembkesites.dk/kea/09_CMS/loud/wp-content/uploads/2021/04/instagram.png" alt="instagram link" width="30px" height="30px"></a>
+							<a href="#"><img class="youtube" src="http://lembkesites.dk/kea/09_CMS/loud/wp-content/uploads/2021/04/youtube.png" alt="youtube link" width="30px" height="30px"></a>
+					<?php echo do_shortcode('[ivory-search id="2284" title="Default Search Form"]'); ?>
 						</div>
+
+
 			</div><!-- .site-branding-container -->
 
 			<?php if ( is_singular() && twentynineteen_can_show_post_thumbnail() ) : ?>

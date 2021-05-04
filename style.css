@@ -6,7 +6,7 @@ Author:      Gruppe 6
 Version: 1.1.1
 */
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px) {
     #grid_container_podcast {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -14,4 +14,6 @@ Version: 1.1.1
         margin: 0px 2rem;
 		margin-bottom: 3rem;
     }
+
 }
+

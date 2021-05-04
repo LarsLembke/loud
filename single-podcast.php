@@ -45,7 +45,7 @@ get_header();
                         <img class="billede" src="" alt="">
                     </div>
                 </div>
-                <a href="#section_two" class="pil"><img src="http://lembkesites.dk/kea/09_CMS/loud/wp-content/uploads/2021/04/pil-gul.png"></a>
+                <a href="#section_two" class="pil"><img src="https://lembkesites.dk/kea/09_CMS/loud/wp-content/uploads/2021/04/pil-gul.png"></a>
             </section>
 
             <section id="section_two">
@@ -58,19 +58,7 @@ get_header();
                     </div>
                     <section id="episode">
 
-                        <template>
-                            <article>
-                                <div>
-                                    <p class="dato"></p>
-                                    <h3 class="episodenavn"></h3>
 
-                                    <p class="kortbeskrivelse"></p>
-                                    <a href="">
-                                        <img src="http://lembkesites.dk/kea/09_CMS/loud/wp-content/uploads/2021/04/pil.svg"></a>
-
-                                </div>
-                            </article>
-                        </template>
                     </section>
                 </section>
             </section>
@@ -80,7 +68,19 @@ get_header();
 
         </main>
 
+        <template>
+            <article>
+                <div>
+                    <p class="dato"></p>
+                    <h3 class="episodenavn"></h3>
 
+                    <p class="kortbeskrivelse"></p>
+                    <a href="">
+                        <img src="https://lembkesites.dk/kea/09_CMS/loud/wp-content/uploads/2021/04/pil.svg"></a>
+
+                </div>
+            </article>
+        </template>
         <script>
             let podcast;
             let episoder;
@@ -88,10 +88,10 @@ get_header();
             let episodeInfo;
 
 
-            const dbUrl = "http://lembkesites.dk/kea/09_CMS/loud/wp-json/wp/v2/podcast/" + aktuelpodcast;
+            const dbUrl = "https://lembkesites.dk/kea/09_CMS/loud/wp-json/wp/v2/podcast/" + aktuelpodcast;
 
 
-            const episodeUrl = "http://lembkesites.dk/kea/09_CMS/loud/wp-json/wp/v2/episode?per_page=100";
+            const episodeUrl = "https://lembkesites.dk/kea/09_CMS/loud/wp-json/wp/v2/episode?per_page=100";
 
             const container = document.querySelector("#episode");
 
@@ -131,7 +131,7 @@ get_header();
             }
 
             async function getEpisoder() {
-                let episodeForhold = "http://lembkesites.dk/kea/09_CMS/loud/wp-json/wp/v2/episode/";
+                let episodeForhold = "https://lembkesites.dk/kea/09_CMS/loud/wp-json/wp/v2/episode/";
 
 
                 podcast.episoder.forEach(async episoderne => {

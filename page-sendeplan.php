@@ -78,7 +78,7 @@ get_header();
         <template>
             <article class="program_container">
                 <p class="klokken"></p>
-				<img class="img" src="" >
+				<img class="img" src="" alt="" width="700px" height="700px">
                 <p class="program"></p>
             </article>
         </template>

@@ -36,7 +36,10 @@ echo do_shortcode('[smartslider3 slider="4"]');
 						</div>
                         <button data-podcast="alle">Alle</button>
                     </nav>
-                    <div id="grid_container_podcast"></div>
+                    <div id="grid_container_podcast">
+
+					</div>
+
                 </section>
 
 
@@ -47,14 +50,13 @@ echo do_shortcode('[smartslider3 slider="4"]');
 
             <template>
                 <article class="podcast_container">
-                    <img src="" alt="" class="podcover">
+                    <img src="" alt="" class="podcover" width="700px" height="700px">
                     <h3 class="navn"></h3>
                     <p class="host"></p>
                     <p class="kortbeskrivelse"></p>
                     <p class="tid"></p>
                 </article>
             </template>
-
 
             <script>
                 let podcasts;
